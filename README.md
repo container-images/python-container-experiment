@@ -35,16 +35,16 @@ Using `-v /home/mkocka/work/:/work` You created a bind mount and you just need t
 In my case, the output looks like this: 
 
 `[mkocka@TheDude python-container-experiment]$ docker exec -it py2 python /work/app.py` <br />
-`2.7.13 (default, Jan 12 2017, 17:59:37)`  <br />
+<b>`2.7.13`</b>`(default, Jan 12 2017, 17:59:37)`  <br />
 `[GCC 6.3.1 20161221 (Red Hat 6.3.1-1)]` <br />
 `[mkocka@TheDude python-container-experiment]$ docker exec -it py3 python /work/app.py` <br />
-`3.5.2 (default, Sep 14 2016, 11:28:32)`  <br />
+<b>`3.5.2`</b>`(default, Sep 14 2016, 11:28:32)`  <br />
 `[GCC 6.2.1 20160901 (Red Hat 6.2.1-1)]` <br />
 `[mkocka@TheDude python-container-experiment]$ docker exec -it py34 python /work/app.py`<br />
-`3.4.5 (default, Oct 21 2016, 22:32:58)` <br />
+<b>`3.4.5`</b>`(default, Oct 21 2016, 22:32:58)` <br />
 `[GCC 6.2.1 20160916 (Red Hat 6.2.1-2)]`<br />
 `[mkocka@TheDude python-container-experiment]$ docker exec -it py33 python /work/app.py`<br />
-`3.3.6 (default, Oct 21 2016, 22:30:00)`<br />
+<b>`3.3.6`</b>`(default, Oct 21 2016, 22:30:00)`<br />
 `[GCC 6.2.1 20160916 (Red Hat 6.2.1-2)]`<br />
 
 
