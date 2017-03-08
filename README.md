@@ -9,6 +9,10 @@ In the Docker file, you can specify which python version and which python librar
 One of the trick with such container as just python language, which is doing nothing after start is to keep it alive or in kind of infinite loop. One can done it with command:
  * `CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"`
 
+It is importatnt to put selinux into permisive mode: 
+ * `getenforce` - tells you your selinux status
+ * `sudo setenforce 0` - switch selinux to the permissive mode 
+
 ## How to build
 
  * `docker build -t python3:f25 -f Dockerfile.py3 .` - to build image with latest Fedora 25 python3 
