@@ -11,20 +11,26 @@ One of the trick with such container as just python language, which is doing not
 
 ## How to build
 
- * `docker build -t python3:f25 -f Dockerfile.py3 .` - to build image with python3 
+ * `docker build -t python3:f25 -f Dockerfile.py3 .` - to build image with latest Fedora 25 python3 
  * `docker build -t python2:f25 -f Dockerfile.py2 .` - to build image with python2 
+ * `docker build -t python33:f25 -f Dockerfile.py3.3 .` - to build image with python 3.3 
+ * `docker build -t python34:f25 -f Dockerfile.py3.4 .` - to build image with python 3.4  
 
 ## How to run the containers 
 
  * `docker run -v /home/mkocka/work/:/work --name py3 python3:f25 &`
  * `docker run -v /home/mkocka/work/:/work --name py2 python2:f25 &`
+ * `docker run -v /home/mkocka/work/:/work --name py33 python33:f25 &`
+ * `docker run -v /home/mkocka/work/:/work --name py34 python34:f25 &`
 
 ## How to execute your script in your container 
  
 Using `-v /home/mkocka/work/:/work` You created a bind mount and you just need to have your script in mounted folder: `/home/mkocka/work/` in my case simple app.py which only print the python version. 
 
- * `docker exec -it py2 python /work/app.py` - app.py executed by python2
- * `docker exec -it py3 python /work/app.py` - app.py executed by python3
+ * `docker exec -it py2 python /work/app.py` - app.py executed by default python which is in Fedora 25 python version 2.7 
+ * `docker exec -it py3 python /work/app.py` - app.py executed by latest python in Fedora 25 which is python version 3.5
+ * `docker exec -it py33 python /work/app.py` - app.py executed by python 3.3
+ * `docker exec -it py34 python /work/app.py` - app.py executed by python 3.4
 
 In my case, the output looks like this: 
 
@@ -34,6 +40,12 @@ In my case, the output looks like this:
 `[mkocka@TheDude python-container-experiment]$ docker exec -it py3 python /work/app.py` <br />
 `3.5.2 (default, Sep 14 2016, 11:28:32)`  <br />
 `[GCC 6.2.1 20160901 (Red Hat 6.2.1-1)]` <br />
+`[mkocka@TheDude python-container-experiment]$ docker exec -it py34 python /work/app.py`<br />
+`3.4.5 (default, Oct 21 2016, 22:32:58)` <br />
+`[GCC 6.2.1 20160916 (Red Hat 6.2.1-2)]`<br />
+`[mkocka@TheDude python-container-experiment]$ docker exec -it py33 python /work/app.py`<br />
+`3.3.6 (default, Oct 21 2016, 22:30:00)`<br />
+`[GCC 6.2.1 20160916 (Red Hat 6.2.1-2)]`<br />
 
 
 
