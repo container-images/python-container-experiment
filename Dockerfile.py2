@@ -8,7 +8,5 @@ ENV PATH="/usr/bin:${PATH}"
 
 RUN mkdir /work
 
-RUN chmod 777 /work
-
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 
