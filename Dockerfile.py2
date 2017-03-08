@@ -1,0 +1,14 @@
+FROM fedora:25
+
+MAINTAINER Matus Kocka, Red Hat <mkocka@redhat.com>
+
+RUN dnf install -y bash python python2-numpy python2-matplotlib && dnf -y clean all
+
+ENV PATH="/usr/bin:${PATH}"
+
+RUN mkdir /work
+
+RUN chmod 777 /work
+
+CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
+
