@@ -47,5 +47,8 @@ In my case, the output looks like this:
 <b>`3.3.6`</b>`(default, Oct 21 2016, 22:30:00)`<br />
 `[GCC 6.2.1 20160916 (Red Hat 6.2.1-2)]`<br />
 
+## How to execute more complicated script with plots
+
+ TBD
 
 
