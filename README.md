@@ -27,6 +27,7 @@ Using `-v /home/mkocka/work/:/work` You created a bind mount and you just need t
  * `docker exec -it py3 python /work/app.py` - app.py executed by python3
 
 In my case, the output looks like this: 
+
 `[mkocka@TheDude python-container-experiment]$ docker exec -it py2 python /work/app.py
 2.7.13 (default, Jan 12 2017, 17:59:37) 
 [GCC 6.3.1 20161221 (Red Hat 6.3.1-1)]
